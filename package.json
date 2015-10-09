@@ -16,9 +16,7 @@
     "file-loader": "^0.8.4",
     "react-transform-hmr": "^1.0.1",
     "webpack": "^1.12.2",
-    "webpack-dev-server": "^1.12.0"
-  },
-  "dependencies": {
+    "webpack-dev-server": "^1.12.0",
     "history": "^1.12.3",
     "react": "^0.14.0",
     "react-dom": "^0.14.0"
