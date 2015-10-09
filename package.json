@@ -4,7 +4,7 @@
   "description": "Dreamforwad financial's website",
   "main": "index.js",
   "scripts": {
-    "start": "./node_modules/.bin/webpack-dev-server --hot --inline",
+    "start": "./node_modules/.bin/webpack --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Ryan Kahn <ryan@dreamforwardfinancial.com>",
