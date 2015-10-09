@@ -1,17 +1,9 @@
-var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
-
 module.exports = {
   context: __dirname + "/app",
-  entry: {
-    javascript: "./app.jsx",
-    html: "./index.html"
-  },
-  plugins: [
-    new BrowserSyncPlugin({
-      host: 'localhost',
-      port: 3000,
-      server: { baseDir: [__dirname + '/dist'] }
-    })
+  entry: [
+    "webpack/hot/dev-server",
+    "./app.jsx",
+    "./index.html"
   ],
   module: {
     loaders: [
