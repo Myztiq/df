@@ -6,6 +6,10 @@ To run:
 2. `npm start`
 
 
+To deploy:
+
+1. `npm run deploy`
+
 Useful things I should keep track of:
 
 * https://github.com/rackt/react-router/tree/master/examples/auth-flow

@@ -1,7 +1,6 @@
-module.exports = {
+ var config = {
   context: __dirname + "/app",
   entry: [
-    "webpack/hot/dev-server",
     "./main.jsx",
     "./index.html"
   ],
@@ -26,3 +25,8 @@ module.exports = {
     historyApiFallback: true
   }
 };
+
+if (process.env.NODE_ENV !== 'production') {
+  config.entry.unshift("webpack/hot/dev-server");
+}
+module.exports = config;

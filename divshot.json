@@ -1,0 +1,6 @@
+{
+  "name": "dreamforward",
+  "clean_urls": true,
+  "root": "dist",
+  "error_page": "index.html"
+}
