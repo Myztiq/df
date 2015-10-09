@@ -2,7 +2,7 @@ module.exports = {
   context: __dirname + "/app",
   entry: [
     "webpack/hot/dev-server",
-    "./app.jsx",
+    "./main.jsx",
     "./index.html"
   ],
   module: {
@@ -19,7 +19,10 @@ module.exports = {
     ]
   },
   output: {
-    filename: "app.js",
+    filename: "main.js",
     path: __dirname + "/dist"
+  },
+  devServer: {
+    historyApiFallback: true
   }
 };
