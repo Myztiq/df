@@ -1,5 +1,9 @@
 # Dreamforward Financial
 
+To view development:
+
+http://development.dreamforward.divshot.io/inbox
+
 To run:
 
 1. `npm install`
