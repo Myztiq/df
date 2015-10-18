@@ -1,11 +1,13 @@
 import React from "react";
 import { Link } from 'react-router'
 
+import logo from "images/logo.png"
+
 export default class App extends React.Component {
   render() {
     return (
       <div>
-        <img src="/images/logo.png" />
+        <img src={logo} />
         <h1>Dreamforward Financial</h1>
         <ul>
           <li><Link to="/dashboard">Dashboard</Link></li>

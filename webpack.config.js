@@ -34,14 +34,15 @@ var config = {
         test: /\.(jpe?g|png|gif|svg)$/i,
         loaders: [
           'url?limit=8192',
-          'img'
+          'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
         ]
       }
     ]
   },
   output: {
     filename: "main.js",
-    path: __dirname + "/dist"
+    path: __dirname + "/dist",
+    publicPath: '/'
   },
   devServer: {
     historyApiFallback: true

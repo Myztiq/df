@@ -37,7 +37,7 @@ export default class Login extends React.Component {
       <Error message={this.state.errorMessage} />
       <div className="row">
         <div className="col-sm">
-          <label for="email">Email</label>
+          <label htmlFor="email">Email</label>
         </div>
         <div className="col-sm">
           <input id="email" type="email" placeholder="Email" ref="email" required/>
@@ -45,7 +45,7 @@ export default class Login extends React.Component {
       </div>
       <div className="row">
         <div className="col-sm">
-          <label for="password">Password</label>
+          <label htmlFor="password">Password</label>
         </div>
         <div className="col-sm">
           <input id="password" type="password" placeholder="Password" ref="password" required/>
