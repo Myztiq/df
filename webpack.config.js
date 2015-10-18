@@ -10,7 +10,9 @@ var config = {
     modulesDirectories: ["node_modules", "bower_components"],
     alias: {
       'components': path.join(__dirname, '/app/components'),
-      'services': path.join(__dirname, '/app/services')
+      'services': path.join(__dirname, '/app/services'),
+      'css': path.join(__dirname, '/css'),
+      'images': path.join(__dirname, '/images')
     }
   },
   module: {
@@ -23,6 +25,17 @@ var config = {
       {
         test: /\.html$/,
         loader: "file?name=[name].[ext]"
+      },
+      {
+        test: /\.scss$/,
+        loaders: ["style", "css", "sass"]
+      },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        loaders: [
+          'url?limit=8192',
+          'img'
+        ]
       }
     ]
   },

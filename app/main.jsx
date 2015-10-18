@@ -1,3 +1,5 @@
+import 'css/index.scss';
+
 import React from "react";
 import createBrowserHistory from 'history/lib/createBrowserHistory';
 import ReactDOM from "react-dom";

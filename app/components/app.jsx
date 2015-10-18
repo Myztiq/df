@@ -5,6 +5,7 @@ export default class App extends React.Component {
   render() {
     return (
       <div>
+        <img src="/images/logo.png" />
         <h1>Dreamforward Financial</h1>
         <ul>
           <li><Link to="/dashboard">Dashboard</Link></li>
