@@ -7,8 +7,10 @@ export default class App extends React.Component {
       <div>
         <h1>Dreamforward Financial</h1>
         <ul>
-          <li><Link to="/about">About</Link></li>
-          <li><Link to="/inbox">Inbox</Link></li>
+          <li><Link to="/dashboard">Dashboard</Link></li>
+          <li><Link to="/setup">Setup</Link></li>
+          <li><Link to="/login">Login</Link></li>
+          <li><Link to="/register">Register</Link></li>
         </ul>
         {this.props.children}
       </div>

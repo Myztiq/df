@@ -22,5 +22,8 @@
     "react-transform-hmr": "^1.0.1",
     "webpack": "^1.12.2",
     "webpack-dev-server": "^1.12.0"
+  },
+  "dependencies": {
+    "bluebird": "^2.10.2"
   }
 }

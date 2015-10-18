@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from 'react-router'
 
 export default class Greeting1 extends React.Component {
+
   render() {
     return <div>Greeting1 {this.props.name}
       <br/>

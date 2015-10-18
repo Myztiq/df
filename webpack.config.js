@@ -7,7 +7,7 @@
   module: {
     loaders: [
       {
-        test: /\.jsx$/,
+        test: /\.js(x)?$/,
         exclude: /node_modules/,
         loaders: ["babel-loader"]
       },
