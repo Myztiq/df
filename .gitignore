@@ -1,3 +1,4 @@
 dist
 node_modules
 .divshot-cache
+npm-debug.log

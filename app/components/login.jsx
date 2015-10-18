@@ -1,5 +1,5 @@
 import React from "react";
-import auth from "../services/auth.js"
+import auth from "services/auth.js"
 import Error from "./error.jsx"
 import { Link } from 'react-router'
 
@@ -20,7 +20,8 @@ export default class Login extends React.Component {
     };
     this.setState({saving: true});
     auth.login(params)
-      .then(()=>{
+      .then((response)=>{
+        console.log('Login response', response);
         this.props.history.pushState(null, '/dashboard');
       })
       .catch((err)=>{

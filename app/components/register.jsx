@@ -1,5 +1,5 @@
 import React from "react";
-import auth from "../services/auth.js"
+import auth from "services/auth.js"
 import Error from "./error.jsx"
 import { Link } from 'react-router'
 

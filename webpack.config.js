@@ -1,9 +1,18 @@
- var config = {
-  context: __dirname + "/app",
+var path = require('path');
+var config = {
+  context: __dirname + '/app',
   entry: [
     "./main.jsx",
     "./index.html"
   ],
+  resolve: {
+    extensions: ['', '.js', '.jsx'],
+    modulesDirectories: ["node_modules", "bower_components"],
+    alias: {
+      'components': path.join(__dirname, '/app/components'),
+      'services': path.join(__dirname, '/app/services')
+    }
+  },
   module: {
     loaders: [
       {

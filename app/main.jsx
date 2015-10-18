@@ -2,17 +2,17 @@ import React from "react";
 import createBrowserHistory from 'history/lib/createBrowserHistory';
 import ReactDOM from "react-dom";
 import { Router, Route, IndexRoute } from 'react-router'
-import auth from './services/auth'
+import auth from 'services/auth'
 
 
-import App from "./components/app.jsx";
-import Login from "./components/login.jsx";
-import Register from "./components/register.jsx";
+import App from "components/app.jsx";
+import Login from "components/login.jsx";
+import Register from "components/register.jsx";
 
-import Greeting from "./components/greeting.jsx";
-import Greeting1 from "./components/greeting1.jsx";
-import CustomGreeting from "./components/customGreeting.jsx"
-import Dashboard from "./components/dashboard.jsx"
+import Greeting from "components/greeting.jsx";
+import Greeting1 from "components/greeting1.jsx";
+import CustomGreeting from "components/customGreeting.jsx"
+import Dashboard from "components/dashboard.jsx"
 
 
 function requireAuthentication(nextState, replaceState) {
