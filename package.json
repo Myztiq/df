@@ -22,6 +22,6 @@
     "react-transform-hmr": "^1.0.1",
     "surge": "^0.16.0",
     "webpack": "^1.12.2",
-    "webpack-dev-server": "^1.12.0",
+    "webpack-dev-server": "^1.12.0"
   }
 }
