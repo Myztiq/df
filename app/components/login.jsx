@@ -35,26 +35,17 @@ export default class Login extends React.Component {
   render() {
     return <form onSubmit={this.login} id="loginForm">
       <Error message={this.state.errorMessage} />
-      <div className="row">
-        <div className="col-sm">
-          <label htmlFor="email">Email</label>
-        </div>
-        <div className="col-sm">
-          <input id="email" type="email" placeholder="Email" ref="email" required/>
-        </div>
+      <div className="form-group">
+        <label className="sr-only" htmlFor="email">Email</label>
+        <input className="form-control" id="email" type="email" placeholder="Email" ref="email" required/>
       </div>
-      <div className="row">
-        <div className="col-sm">
-          <label htmlFor="password">Password</label>
-        </div>
-        <div className="col-sm">
-          <input id="password" type="password" placeholder="Password" ref="password" required/>
-        </div>
+      <div className="form-group">
+        <label className="sr-only" htmlFor="password">Password</label>
+        <input className="form-control" id="password" type="password" placeholder="Password" ref="password" required/>
       </div>
-      <input type="submit" value={this.state.saving ? 'Logging In..' : 'Login'} disabled={this.state.saving}/>
-      <div>
-        Not yet registered?
-        <Link to="/register">Register</Link>
+      <input className="btn btn-primary" type="submit" value={this.state.saving ? 'Logging In..' : 'Login'} disabled={this.state.saving}/>
+      <div className="register">
+        Not yet registered? <Link to="/register">Register</Link>
       </div>
     </form>;
   }

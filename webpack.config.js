@@ -31,7 +31,7 @@ var config = {
       },
       {
         test: /\.scss$/,
-        loaders: ["style", "css", "sass"]
+        loaders: ["style", "css", "sass", "autoprefixer"]
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
