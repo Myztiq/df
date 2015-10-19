@@ -1,5 +1,22 @@
 @import "~scss-flex-grid/_flex-grid.scss";
-@import "components/loginForm";
+@import "~normalize.css/normalize.css";
+
+$black: #333333;
+$teal: #f3fcff;
+
 body {
-  background-color: teal;
+  background-color: $teal;
 }
+.main-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.page{
+  max-width: 1200px;
+  min-width: 80%;
+}
+
+
+@import "components/loginForm";
+@import "components/header";
