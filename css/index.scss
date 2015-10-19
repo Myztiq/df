@@ -7,11 +7,12 @@ $teal: #f3fcff;
 body {
   background-color: $teal;
 }
-.main-content {
+.container {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .page{
   max-width: 1200px;
   min-width: 80%;

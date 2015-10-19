@@ -1,5 +1,5 @@
 import Promise from "bluebird";
-import config from "services/config";
+import config from "config";
 
 var loggedIn = false;
 var Auth = {

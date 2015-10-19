@@ -1,4 +1,6 @@
 var path = require('path');
+var webpack = require('webpack');
+
 var config = {
   context: __dirname + '/app',
   entry: [
@@ -12,7 +14,8 @@ var config = {
       'components': path.join(__dirname, '/app/components'),
       'services': path.join(__dirname, '/app/services'),
       'css': path.join(__dirname, '/css'),
-      'images': path.join(__dirname, '/images')
+      'images': path.join(__dirname, '/images'),
+      'config': path.join(__dirname, '/config/production.js')
     }
   },
   module: {
@@ -51,5 +54,6 @@ var config = {
 
 if (process.env.NODE_ENV !== 'production') {
   config.entry.unshift("webpack/hot/dev-server");
+  config.resolve.alias.config = path.join(__dirname, '/config/development.js');
 }
 module.exports = config;
