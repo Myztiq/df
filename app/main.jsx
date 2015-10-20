@@ -7,9 +7,12 @@ import { Router, Route, IndexRoute } from 'react-router'
 import auth from 'services/auth'
 
 
-import App from "components/app.jsx";
-import Login from "components/login.jsx";
-import Register from "components/register.jsx";
+import App from "components/layout/app.jsx";
+import Login from "components/authentication/login.jsx";
+import Register from "components/authentication/register.jsx";
+import Background from "components/setup/background.jsx";
+import CheckupResults from "components/setup/checkupResults.jsx";
+import InvestmentMix from "components/setup/investmentMix.jsx";
 
 import Dashboard from "components/dashboard.jsx"
 
@@ -38,6 +41,11 @@ ReactDOM.render((
       <Route path="login" component={Login} onEnter={redirectIfAuthenticated} />
       <Route path="register" component={Register} onEnter={redirectIfAuthenticated} />
       <Route path="dashboard" component={Dashboard} onEnter={requireAuthentication} />
+      <Route path="setup">
+        <Route path="background" component={Background} />
+        <Route path="checkupResults" component={CheckupResults} />
+        <Route path="investmentMix" component={InvestmentMix} />
+      </Route>
     </Route>
   </Router>
 ), document.getElementById('main'));

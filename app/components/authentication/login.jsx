@@ -1,8 +1,8 @@
 import React from "react";
 import auth from "services/auth.js"
-import Error from "./error.jsx"
+import Error from "components/utils/error.jsx"
 import { Link } from 'react-router'
-import LoadingButton from "components/loadingButton.jsx"
+import LoadingButton from "components/utils/loadingButton.jsx"
 
 export default class Login extends React.Component {
   constructor(props) {
