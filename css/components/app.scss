@@ -3,6 +3,10 @@ body, html, .main-content, .page, #main {
   flex: 1;
   flex-direction: column;
   height: 100%;
+  width: 100%;
+}
+.main-content{
+  padding-top: 24px;
 }
 header{
   width: 100%;

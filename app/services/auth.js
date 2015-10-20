@@ -21,6 +21,10 @@ var Auth = {
     return new Promise(function(resolve, reject){
       reject(new Error('Register not setup yet.'));
     })
+  },
+  logout: function() {
+    loggedIn = false;
   }
+
 };
 export default Auth;

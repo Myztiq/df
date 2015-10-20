@@ -18,10 +18,10 @@ export default class Header extends React.Component {
     if (loggedIn) {
       navbar = <ul className="nav navbar-nav pull-right">
         <li className="nav-item">
-          <Link className="nav-link" to="/dashboard">Home</Link>
+          <a className="nav-link" href="mailto:support@dreamforwardfinancial.com" target="_blank">Contact Us</a>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to="/setup">Dashboard</Link>
+          <Link className="nav-link" to="/logout">Logout</Link>
         </li>
       </ul>;
     }
