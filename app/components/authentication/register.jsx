@@ -15,6 +15,8 @@ export default class Register extends React.Component {
 
   login = (event) => {
     event.preventDefault();
+    this.props.history.pushState(null, '/setup/background');
+    return;
     var params = {
       email: this.refs.email.value,
       password: this.refs.password.value,
@@ -23,7 +25,7 @@ export default class Register extends React.Component {
     this.setState({saving: true});
     auth.register(params)
       .then(()=>{
-        this.props.history.pushState(null, '/dashboard');
+        this.props.history.pushState(null, '/setup/background');
       })
       .catch((err)=>{
         this.setState({
