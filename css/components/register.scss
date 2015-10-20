@@ -1,0 +1,11 @@
+#register{
+  max-height: 400px;
+}
+#registerForm {
+  width: 400px;
+  .login{
+    display: inline-block;
+    margin-left: 10px;
+    float: right;
+  }
+}

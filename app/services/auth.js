@@ -14,7 +14,7 @@ var Auth = {
         return response;
       })
       .catch(function (response) {
-        throw response.responseJSON;
+        throw response.responseJSON || 'Unable to communicate with API';
       });
   },
   register: function () {
