@@ -25,8 +25,9 @@ function requireAuthentication(nextState, replaceState, cb) {
         replaceState({ nextPathname: nextState.location.pathname }, '/login');
       }
     })
-    .catch(function () {
-      replaceState({ nextPathname: nextState.location.pathname }, '/login');
+    .catch(function (err) {
+      console.log('Err', err);
+      replaceState({ nextPathname: nextState.location.pathname }, '/error');
     })
    .finally(cb);
 }
