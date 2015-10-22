@@ -3,6 +3,7 @@ import React from "react";
 export default class extends React.Component {
   submit = (event) => {
     event.preventDefault();
+
     this.props.history.pushState(null, '/setup/checkupResults');
   };
   render() {

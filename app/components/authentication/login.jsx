@@ -22,7 +22,6 @@ export default class Login extends React.Component {
     this.setState({saving: true});
     auth.login(params)
       .then((response)=>{
-        console.log('Login response', response);
         this.props.history.pushState(null, '/dashboard');
       })
       .catch((err)=>{

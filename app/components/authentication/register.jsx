@@ -13,13 +13,12 @@ export default class Register extends React.Component {
     };
   }
 
-  login = (event) => {
+  register = (event) => {
     event.preventDefault();
-    this.props.history.pushState(null, '/setup/background');
-    return;
     var params = {
       email: this.refs.email.value,
       password: this.refs.password.value,
+      dob: this.refs.dob.value,
       ssn: this.refs.ssn.value
     };
     this.setState({saving: true});
@@ -37,13 +36,16 @@ export default class Register extends React.Component {
 
   render() {
     return <div id="register" className="center">
-      <form onSubmit={this.login} className="well" id="registerForm">
+      <form onSubmit={this.register} className="well" id="registerForm">
         <Error error={this.state.error} />
         <div className="form-group">
           <input className="form-control" type="email" placeholder="Email" ref="email" required/>
         </div>
         <div className="form-group">
           <input className="form-control" type="text" placeholder="Social Security Number" ref="ssn" required/>
+        </div>
+        <div className="form-group">
+          <input className="form-control" type="date" placeholder="Birthday" ref="dob" required/>
         </div>
         <div className="form-group">
           <input className="form-control" type="password" placeholder="Password" ref="password" required/>
