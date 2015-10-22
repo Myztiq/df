@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "components/layout/header"
 
-export default class App extends React.Component {
+export default class extends React.Component {
   render() {
     return (
       <div className="page">

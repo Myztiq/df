@@ -44,6 +44,19 @@ var Auth = {
       reject('Not Logged In');
     });
 
+  },
+  verifyEmail: function (code) {
+    return Promise.resolve(
+      $.post(config.API + '/verify-email', {
+        code: code
+      })
+    ).then(function (response) {
+        user = response;
+        return response;
+      })
+      .catch(function (response) {
+        throw response.responseJSON || 'Unable to communicate with API';
+      });
   }
 
 };

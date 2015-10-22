@@ -1,6 +1,6 @@
 import React from "react";
 
-export default class LoadingButton extends React.Component {
+export default class extends React.Component {
   render() {
     var { saving, value, savingText, ...other } = this.props;
     var value = this.props.label;

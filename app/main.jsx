@@ -13,6 +13,7 @@ import Register from "components/authentication/register.jsx";
 import Background from "components/setup/background.jsx";
 import CheckupResults from "components/setup/checkupResults.jsx";
 import InvestmentMix from "components/setup/investmentMix.jsx";
+import VerifyEmailWarning from "components/authentication/verifyEmailWarning.jsx"
 import VerifyEmail from "components/authentication/verifyEmail.jsx"
 
 import Dashboard from "components/dashboard.jsx"
@@ -87,7 +88,8 @@ ReactDOM.render((
       </Route>
       <Route onEnter={requireAuthentication}>
         <Route path="logout" onEnter={logout} />
-        <Route path="verify-email" component={VerifyEmail}/>
+        <Route path="verify-email" component={VerifyEmailWarning}/>
+        <Route path="email-verification/:code" component={VerifyEmail}/>
         <Route onEnter={requireVerifiedEmail}>
           <Route path="dashboard" component={Dashboard} onEnter={requireSetupCompletion} />
           <Route path="setup">

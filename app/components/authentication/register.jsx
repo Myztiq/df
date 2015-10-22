@@ -4,7 +4,7 @@ import Error from "components/utils/error.jsx"
 import { Link } from 'react-router'
 import LoadingButton from "../utils/loadingButton.jsx"
 
-export default class Register extends React.Component {
+export default class extends React.Component {
   constructor(props) {
     super(props);
     this.state = {

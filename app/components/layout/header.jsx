@@ -3,7 +3,7 @@ import logo from "images/logo.png"
 import { Link } from 'react-router'
 import auth from "services/auth.js"
 
-export default class Header extends React.Component {
+export default class extends React.Component {
   render() {
     var loggedIn = auth.loggedIn();
 
