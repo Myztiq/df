@@ -8,7 +8,7 @@ export default class extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentPage: 'InvestmentMix'
+      currentPage: 'Background'
     };
   }
 
