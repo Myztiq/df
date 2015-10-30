@@ -26,8 +26,11 @@ export default class extends React.Component {
     });
   };
 
-  saveInvestmentMix = (mix)=> {
-    console.log(mix);
+  saveInvestmentMix = (allocations)=> {
+    console.log('Saving!');
+    this.setState({
+      allocations: allocations
+    });
     this.goToView('Overview');
   };
 
@@ -38,13 +41,14 @@ export default class extends React.Component {
   };
 
   render() {
+    console.log(this.state.allocations);
     switch(this.state.currentPage) {
       case 'Background':
         return <Background save={this.saveBackground} age={this.state.age} savings={this.state.savings}/>;
       case 'CheckupResults':
         return <CheckupResults back={this.prepGoToView('Background')} save={this.prepGoToView('InvestmentMix')}/>;
       case 'InvestmentMix':
-        return <InvestmentMix back={this.prepGoToView('CheckupResults')} save={this.saveInvestmentMix}/>;
+        return <InvestmentMix back={this.prepGoToView('CheckupResults')} save={this.saveInvestmentMix} allocations={this.state.allocations}/>;
       case 'Overview':
         return <Overview back={this.prepGoToView('InvestmentMix')}/>;
       default:
