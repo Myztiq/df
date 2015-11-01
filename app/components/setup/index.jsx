@@ -8,7 +8,8 @@ export default class extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentPage: 'Background'
+      currentPage: 'Background',
+      companyMax: .05
     };
   }
 
@@ -27,7 +28,6 @@ export default class extends React.Component {
   };
 
   saveInvestmentMix = (allocations)=> {
-    console.log('Saving!');
     this.setState({
       allocations: allocations
     });
@@ -41,7 +41,6 @@ export default class extends React.Component {
   };
 
   render() {
-    console.log(this.state.allocations);
     switch(this.state.currentPage) {
       case 'Background':
         return <Background save={this.saveBackground} age={this.state.age} savings={this.state.savings}/>;
@@ -50,7 +49,16 @@ export default class extends React.Component {
       case 'InvestmentMix':
         return <InvestmentMix back={this.prepGoToView('CheckupResults')} save={this.saveInvestmentMix} allocations={this.state.allocations}/>;
       case 'Overview':
-        return <Overview back={this.prepGoToView('InvestmentMix')}/>;
+        return <Overview
+          toBackground={this.prepGoToView('Background')}
+          toInvestments={this.prepGoToView('InvestmentMix')}
+          totalPaycheck={1800}
+          defaultContributionPercent={.1}
+          age={this.state.age}
+          savings={this.state.savings}
+          companyMax={this.state.companyMax}
+          allocations={this.state.allocations}
+        />;
       default:
         return <div>No Matched View - {this.state.currentPage}</div>;
     }

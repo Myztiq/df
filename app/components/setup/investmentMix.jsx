@@ -17,7 +17,7 @@ export default class extends React.Component {
         });
         var newAllocations = this.state.allocations;
         if (!this.props.allocations) {
-          console.log('No Allocations!')
+          console.log('No Allocations!');
           newAllocations = {};
           newAllocations[targetDateFund.id] = 100;
         }
