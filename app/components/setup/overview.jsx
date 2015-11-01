@@ -102,7 +102,7 @@ export default class extends React.Component {
               <ul>
                 <li>
                   Each paycheck you're putting away
-                  <input type="number" value={this.state.contribution} onChange={this.changeContribution}/>
+                  <input type="number" value={this.state.contribution} onChange={this.changeContribution} min="0"/>
                 </li>
                 <li>Matched with ${employerMatch} from your employer</li>
                 <li>Which totals ${totalContribution}/paycheck</li>
