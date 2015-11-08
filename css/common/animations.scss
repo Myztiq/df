@@ -17,6 +17,7 @@ $translateAmount: 80%;
 
 .slide-forwards-leave {
   position: absolute;
+  width: 100%;
   top: 0;
   transform: translateX(0) scale(1);
   opacity: 1;
@@ -41,6 +42,7 @@ $translateAmount: 80%;
 
 .slide-backwards-leave {
   position: absolute;
+  width: 100%;
   top: 0;
   opacity: 1;
   transform: translateX(0) scale(1);

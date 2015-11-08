@@ -16,7 +16,6 @@ export default class extends React.Component {
         <div className="col-xs-6 col-xs-offset-3">
           <div className="card card-block">
             <h1 className="card-title">Background</h1>
-            <div className="card-subtitle text-muted">Some basic information</div>
             <div className="card-body">
               <form onSubmit={this.submit}>
                 <div className="form-group">
