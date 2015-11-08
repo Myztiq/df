@@ -1,0 +1,53 @@
+.animation-container {
+   position: relative;
+ }
+
+$slideTransition: transform 500ms ease-in, opacity 300ms linear;
+$scaleAmount: .5;
+$translateAmount: 150%;
+.slide-forwards-enter {
+  transform: translateX($translateAmount) scale($scaleAmount);
+  opacity: 0;
+}
+.slide-forwards-enter.slide-forwards-enter-active {
+  transform: translateX(0) scale(1);
+  opacity: 1;
+  transition: $slideTransition;
+}
+
+.slide-forwards-leave {
+  position: absolute;
+  top: 0;
+  transform: translateX(0) scale(1);
+  opacity: 1;
+}
+
+.slide-forwards-leave.slide-forwards-leave-active {
+  transform: translateX(-$translateAmount) scale($scaleAmount);
+  opacity: 0;
+  transition: $slideTransition;
+}
+
+
+.slide-backwards-enter {
+  transform: translateX(-$translateAmount) scale($scaleAmount);
+  opacity: 0;
+}
+.slide-backwards-enter.slide-backwards-enter-active {
+  transform: translateX(0) scale(1);
+  opacity: 1;
+  transition: $slideTransition;
+}
+
+.slide-backwards-leave {
+  position: absolute;
+  top: 0;
+  opacity: 1;
+  transform: translateX(0) scale(1);
+}
+
+.slide-backwards-leave.slide-backwards-leave-active {
+  transform: translateX($translateAmount)  scale($scaleAmount);
+  transition: $slideTransition;
+  opacity: 0;
+}
