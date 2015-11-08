@@ -4,6 +4,7 @@ import CheckupResults from "components/setup/checkupResults.jsx";
 import InvestmentMix from "components/setup/investmentMix.jsx";
 import Overview from "components/setup/overview.jsx";
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import "components/setup/index.scss";
 
 
 export default class extends React.Component {
@@ -45,6 +46,12 @@ export default class extends React.Component {
   };
 
   render() {
+    let stepOrder = [
+      'Background',
+      'CheckupResults',
+      'InvestmentMix',
+      'Overview'
+    ];
     let getCurrentView = ()=> {
       switch(this.state.currentPage) {
         case 'Background':
@@ -83,10 +90,28 @@ export default class extends React.Component {
           return <div key="nothing">No Matched View - {this.state.currentPage}</div>;
       }
     };
-    return <div className="animation-container">
-      <ReactCSSTransitionGroup transitionName={`slide-${this.state.direction}`} transitionEnterTimeout={500} transitionLeaveTimeout={500}>
-        {getCurrentView()}
-      </ReactCSSTransitionGroup>
+    let getStepClass = (step)=>{
+      let diff = stepOrder.indexOf(this.state.currentPage) - stepOrder.indexOf(step);
+      if (diff === 0) {
+        return 'step active';
+      }
+      if (diff > 0) {
+        return 'step complete'
+      }
+      return 'step';
+    };
+    return <div id="setup">
+      <div className="steps">
+        <div className={getStepClass('Background')} onClick={this.prepGoToView('Background', true)}><span>Background</span></div>
+        <div className={getStepClass('CheckupResults')} onClick={this.prepGoToView('CheckupResults', true)}><span>Checkup Results</span></div>
+        <div className={getStepClass('InvestmentMix')} onClick={this.prepGoToView('InvestmentMix', true)}><span>Investment Mix</span></div>
+        <div className={getStepClass('Overview')}><span>Overview</span></div>
+      </div>
+      <div className="animation-container">
+        <ReactCSSTransitionGroup transitionName={`slide-${this.state.direction}`} transitionEnterTimeout={500} transitionLeaveTimeout={500}>
+          {getCurrentView()}
+        </ReactCSSTransitionGroup>
+      </div>
     </div>;
 
   }
