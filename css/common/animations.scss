@@ -4,7 +4,7 @@
 
 $slideTransition: transform 500ms ease-in, opacity 300ms linear;
 $scaleAmount: .5;
-$translateAmount: 80%;
+$translateAmount: 50%;
 .slide-forwards-enter {
   transform: translateX($translateAmount) scale($scaleAmount);
   opacity: 0;
