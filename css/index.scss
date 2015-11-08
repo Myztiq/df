@@ -3,12 +3,12 @@
 $black: #333333;
 $teal: #f3fcff;
 
-@import "utilities/well";
-@import "utilities/animations";
+@import "common/well";
+@import "common/animations";
+@import "common/card";
 
 @import "components/app";
 @import "components/error";
 @import "components/login";
 @import "components/register";
 @import "components/header";
-@import "components/investmentMix";

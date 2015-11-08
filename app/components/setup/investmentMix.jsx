@@ -1,6 +1,7 @@
 import React from "react";
 import investments from "services/investments.js"
 import InvestmentRow from "components/setup/investmentMix/investmentRow.jsx"
+import "components/setup/investmentMix.scss";
 
 export default class extends React.Component {
   constructor(props) {
