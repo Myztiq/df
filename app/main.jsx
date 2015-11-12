@@ -17,6 +17,8 @@ import Setup from "components/setup/index.jsx"
 
 import Dashboard from "components/dashboard.jsx"
 
+import 'bootstrap'
+
 
 function requireAuthentication(nextState, replaceState, cb) {
   return cb();

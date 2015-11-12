@@ -15,7 +15,7 @@ export default class extends React.Component {
       <div className="row">
         <div className="col-xs-6 col-xs-offset-3">
           <div className="card card-block">
-            <h1 className="card-title">Background</h1>
+            <h3 className="card-title">Background</h3>
             <div className="card-body">
               <form onSubmit={this.submit}>
                 <div className="form-group">
@@ -26,8 +26,9 @@ export default class extends React.Component {
                   <label htmlFor="savings">How much you have saved for retirement outside of Dream Forward Financial.</label>
                   <input name="savings" ref="savings" placeholder="0" ref="savings" defaultValue={this.props.savings} required/>
                 </div>
-                <LoadingButton label="Next" className="btn btn-primary" type="submit"/>
-
+                <div className="text-right">
+                  <LoadingButton label="Next" className="btn btn-primary" type="submit"/>
+                </div>
               </form>
             </div>
           </div>
