@@ -87,7 +87,7 @@ export default class extends React.Component {
 
     if (inDanger) {
       paycheckButtonLevel = 'btn-danger';
-      paycheckSubText = <div className="sub">
+      paycheckSubText = <div className="sub bg-danger">
           Having trouble saving for retirement?
           <a href="foo" target="_blank">How can we help?</a>
         </div>;
@@ -102,22 +102,22 @@ export default class extends React.Component {
 
       let totalMoreNeeded = this.recommended - this.getTotalWithCompanyMatch(this.state.paycheckAmount);
 
-      paycheckSubText = <div className="sub">
+      paycheckSubText = <div className="sub bg-warning">
           We recommend you save ${totalMoreNeeded} more a month, your company is willing to match ${totalMoreNeeded - remainingMe} more to help you meet this goal.
         </div>;
     } else if (belowMatch) {
       let remainingCompany = this.companyMatchMax - this.state.paycheckAmount;
       paycheckButtonLevel = 'btn-warning';
-      paycheckSubText = <div className="sub">
+      paycheckSubText = <div className="sub bg-warning">
           You are not maximizing your companies match, leaving ${remainingCompany} on the table.
         </div>;
     } else if (belowRecommended) {
       paycheckButtonLevel = 'btn-warning';
-      paycheckSubText = <div className="sub">
+      paycheckSubText = <div className="sub bg-warning">
           Based on your age and amount saved we recommend you save at least ${this.recommended - this.companyMatchMax - this.state.paycheckAmount} more per paycheck.
         </div>;
     } else {
-      paycheckSubText = <div className="sub">
+      paycheckSubText = <div className="sub bg-success">
         Good job! You are saving {this.getPaycheckPercentage()}% of your paycheck every 2 weeks.
         </div>;
     }
@@ -147,7 +147,9 @@ export default class extends React.Component {
                   <input type="number" className="form-control" value={this.state.paycheckAmount} onChange={this.changePaycheckAmount} min="0" max={this.paycheckTotal}/>
                   {getSaveButton('paycheckAmountSaved', paycheckButtonLevel)}
                 </div>
-                {paycheckSubText}
+                <div className="padded">
+                  {paycheckSubText}
+                </div>
               </div>
             </div>
             <div className="col-xs-4">
