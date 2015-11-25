@@ -13,7 +13,6 @@ import Register from "components/authentication/register.jsx";
 
 import VerifyEmailWarning from "components/authentication/verifyEmailWarning.jsx"
 import VerifyEmail from "components/authentication/verifyEmail.jsx"
-import Setup from "components/setup/index.jsx"
 
 import Dashboard from "components/dashboard.jsx"
 
@@ -97,7 +96,6 @@ ReactDOM.render((
         <Route path="email-verification/:code" component={VerifyEmail}/>
         <Route onEnter={requireVerifiedEmail}>
           <Route path="dashboard" component={Dashboard} onEnter={requireSetupCompletion} />
-          <Route path="setup" component={Setup} />
         </Route>
       </Route>
     </Route>

@@ -1,12 +1,11 @@
 import React from "react";
 import investments from "services/investments.js"
-import InvestmentRow from "components/setup/investmentMix/investmentRow.jsx"
-import "components/setup/investmentMix.scss";
+import InvestmentRow from "components/fundModal/investmentRow.jsx"
+import "components/fundModal/investmentMix.scss";
 
 export default class extends React.Component {
   constructor(props) {
     super(props);
-    console.log(this.props.allocations);
     this.state = {
       investments: null,
       allocations: this.props.allocations || {}

@@ -1,6 +1,5 @@
 import React from "react";
 import investments from "services/investments.js"
-import investmentRow from "components/setup/investmentMix/investmentRow.jsx"
 
 export default class extends React.Component {
   handleChange = (event)=>{

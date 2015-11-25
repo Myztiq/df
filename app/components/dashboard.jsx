@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from 'react-router'
-import 'components/setup/dashboard.scss'
+import 'components/dashboard.scss'
+import FundModal from 'components/fundModal/fundModal.jsx'
 
 export default class extends React.Component {
   constructor(props) {
@@ -8,9 +9,11 @@ export default class extends React.Component {
     this.state = {
       retirementAge: 67,
       retirementAgeSaved: false,
-      paycheckAmount: 110,
+      paycheckAmount: 300,
       paycheckAmountSaved: false,
-      fundSaved: false
+      fundSaved: false,
+      modalOpen: false,
+      currentFund: 'targetDate'
     };
     this.paycheckTotal = 1000;
     this.companyMatchMax = 200;
@@ -40,6 +43,25 @@ export default class extends React.Component {
       companyMatch = myContribution;
     }
     return myContribution + companyMatch;
+  };
+
+  openFundModal = ()=>{
+    this.setState({
+      fundModalOpen: true
+    })
+  };
+
+  closeFundModal = ()=>{
+    this.setState({
+      fundModalOpen: false
+    })
+  };
+
+  setFund = (fundName)=> {
+    this.setState({
+      currentFund: fundName,
+      fundSaved: false
+    });
   };
 
   render() {
@@ -117,12 +139,16 @@ export default class extends React.Component {
           Based on your age and amount saved we recommend you save at least ${this.recommended - this.companyMatchMax - this.state.paycheckAmount} more per paycheck.
         </div>;
     } else {
-      paycheckSubText = <div className="sub bg-success">
-        Good job! You are saving {this.getPaycheckPercentage()}% of your paycheck every 2 weeks.
+      if (this.state.paycheckAmountSaved || !this.state.retirementAgeSaved) {
+        paycheckSubText = <div className="sub">
+          You are saving {this.getPaycheckPercentage()}% of your paycheck every 2 weeks.
         </div>;
+      } else {
+        paycheckSubText = <div className="sub bg-success">
+          Good job! You are saving {this.getPaycheckPercentage()}% of your paycheck every 2 weeks.
+        </div>;
+      }
     }
-
-
 
     return <div id="retirementDashboard">
       <div className="card card-block">
@@ -156,7 +182,7 @@ export default class extends React.Component {
               <div className={getCardClassName(this.state.fundSaved, this.state.paycheckAmountSaved && this.state.retirementAgeSaved)}>
                 <div className="title">Invested in</div>
                 <div className={this.state.fundSaved ? '' : 'input-group'}>
-                  <div className="picker btn btn-secondary form-control" data-toggle="modal" data-target="#fund">
+                  <div className="picker btn btn-secondary form-control" onClick={this.openFundModal}>
                     Target Date Fund
                   </div>
                   {getSaveButton('fundSaved')}
@@ -170,7 +196,6 @@ export default class extends React.Component {
           {getFinalSaveButton()}
         </div>
       </div>
-
       <div className="card card-block">
         <div className="card-body">
           <div className="btn btn-secondary addAnother">
@@ -180,116 +205,12 @@ export default class extends React.Component {
         </div>
       </div>
 
-
-
-      <div className="modal fade" id="fund"  role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div className="modal-dialog" role="document">
-          <div className="modal-content">
-            <div className="modal-header">
-              <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                <span className="sr-only">Close</span>
-              </button>
-              <h4 className="modal-title" id="myModalLabel">Pick Your Fund</h4>
-            </div>
-            <div className="modal-body">
-
-              <div className="btn btn-secondary fund-choice">
-                <i className="fa fa-check-circle-o"></i>
-                Target Date Fund
-                <div className="help">I don't care, just do the smartest thing with my money.</div>
-              </div>
-              <div className="btn btn-secondary fund-choice">
-                <i className="fa fa-circle-o"></i>
-                Pick your risk level
-                <div className="help">I want to learn what level of risk I should go with.</div>
-              </div>
-              <div className="btn btn-secondary fund-choice">
-                <i className="fa fa-circle-o"></i>
-                Advanced Mode
-                <div className="help">I know what i'm doing, seeing a bunch of ticker symbols makes me happy.</div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="modal fade" id="savingsAmount"  role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div className="modal-dialog" role="document">
-          <div className="modal-content">
-            <div className="modal-header">
-              <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                <span className="sr-only">Close</span>
-              </button>
-              <h4 className="modal-title" id="myModalLabel">How much do you want to save</h4>
-            </div>
-            <div className="modal-body">
-
-
-              <input type="number" defaultValue="10"/>%
-
-              <div className="help">
-                Your company is matching you up to $200 every paycheck.
-              </div>
-
-              <br/>
-              <div className="alert alert-warning">
-                <strong>Careful</strong> it looks like you are bringing your contribution down to a dangerously low level.
-                <p>How can we help?</p>
-                <ul>
-                  <li><a href="foo">Foo 1</a></li>
-                  <li><a href="foo">Foo 2</a></li>
-                  <li><a href="foo">Foo 3</a></li>
-                  <li><a href="foo">Foo 4</a></li>
-                  <li><a href="foo">Foo 5</a></li>
-                  <li><a href="foo">Foo 6</a></li>
-                </ul>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      Dashboard!
-
-      <Link className="btn btn-primary" to="/setup">Setup</Link>
-      <Link className="btn btn-primary" to="/login">Login</Link>
-      <Link className="btn btn-primary" to="/register">Register</Link>
+      <FundModal
+        isOpen={this.state.fundModalOpen}
+        close={this.closeFundModal}
+        currentFund={this.state.currentFund}
+        setFund={this.setFund}
+      />
     </div>;
   }
 }
