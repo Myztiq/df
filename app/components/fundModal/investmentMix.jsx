@@ -12,14 +12,9 @@ export default class extends React.Component {
     };
     investments.getInvestments()
       .then((investments)=>{
-        var targetDateFund = investments.find((investment)=>{
-          return investment.targetDateFund;
-        });
         var newAllocations = this.state.allocations;
         if (!this.props.allocations) {
-          console.log('No Allocations!');
           newAllocations = {};
-          newAllocations[targetDateFund.id] = 100;
         }
         this.setState({
           investments: investments,
@@ -60,18 +55,11 @@ export default class extends React.Component {
     }
 
     var totalAllocations = this.getTotalAllocations();
-    var targetDateFund = this.state.investments.find((investment)=>{
-      return investment.targetDateFund;
-    });
     var investmentDom = this.state.investments
-      .filter((investment)=>{
-        return !investment.targetDateFund;
-      })
       .map((investment)=>{
         return <InvestmentRow key={investment.id} investment={investment} value={this.state.allocations[investment.id]} updatedValue={this.setupChangeAllocation(investment.id)}/>
       });
     return <div>
-      <h1>Choose 401(k) Investments</h1>
       <table className="table table-striped investments">
         <thead>
           <tr>
@@ -87,12 +75,6 @@ export default class extends React.Component {
         </thead>
         <tbody>
           {investmentDom}
-          <tr>
-            <td colSpan="8">
-              Overwhelemed by the options? Consider an all-in-one target date fund.
-            </td>
-          </tr>
-          <InvestmentRow investment={targetDateFund} value={this.state.allocations[targetDateFund.id]} updatedValue={this.setupChangeAllocation(targetDateFund.id)}/>
         </tbody>
         <tfoot>
           <tr>

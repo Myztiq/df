@@ -40,14 +40,39 @@ export default class extends React.Component {
     }, 200);
   };
 
+  goBackToChoices = ()=> {
+    this.setState({
+      detailsShown: 'choices'
+    });
+  };
+
+  saveInvestmentMix = ()=> {
+    this.close();
+  };
+
   render() {
     return <Modal id="fundModal" show={this.props.isOpen} onHide={this.close} className={this.state.detailsShown === 'advanced' ? 'expanded' : ''}>
       <Modal.Header closeButton>
-        <Modal.Title>Pick Your Fund</Modal.Title>
+        <Modal.Title>
+          <Switch expression={this.state.detailsShown}>
+            <Case value="advanced">
+              Advanced
+            </Case>
+            <Case value="pickRisk">
+              Pick your risk level
+            </Case>
+            <Case value="choices">
+              Pick your fund
+            </Case>
+          </Switch>
+        </Modal.Title>
         <Modal.Body>
           <Switch expression={this.state.detailsShown}>
             <Case value="advanced">
-              <InvestmentMix />
+              <InvestmentMix
+                save={this.saveInvestmentMix}
+                back={this.goBackToChoices}
+              />
             </Case>
             <Case value="pickRisk">
               <div>Pick your Risk.</div>
@@ -56,6 +81,9 @@ export default class extends React.Component {
                 <li>Medium</li>
                 <li>Low</li>
               </ul>
+              <div className="btn btn-primary" onClick={this.goBackToChoices}>
+                Back
+              </div>
             </Case>
             <Case value="choices">
               <FundChoices

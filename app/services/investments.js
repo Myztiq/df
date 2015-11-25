@@ -56,16 +56,6 @@ export default {
           threeYear: 0.90,
           fiveYear: 3.26,
           fee: 0.05
-        },
-        {
-          name: 'Target Date Fund',
-          id: 'VFORX',
-          type: 'Diversifed portfolio for 2040',
-          oneYear: 3.28,
-          threeYear: 13.82,
-          fiveYear: 13.50,
-          fee: .25,
-          targetDateFund: true
         }
       ])
     });
