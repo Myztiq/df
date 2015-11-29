@@ -30,7 +30,7 @@ var config = {
         loader: "file?name=[name].[ext]"
       },
       {
-        test: /\.scss$/,
+        test: /\.(scss|css)$/,
         loaders: ["style", "css", "sass", "autoprefixer"]
       },
       {

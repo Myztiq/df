@@ -3,7 +3,7 @@ import React from "react";
 export class Case extends React.Component {
   static displayName = 'Case';
   static propTypes = {
-    value: React.PropTypes.string
+    value: React.PropTypes.any
   };
 
   render() {

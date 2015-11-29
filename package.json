@@ -9,7 +9,11 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Ryan Kahn <ryan@dreamforwardfinancial.com>",
-  "license": "See LICENSE file",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Myztiq/df"
+  },
   "dependencies": {
     "autoprefixer-loader": "^3.1.0",
     "babel-core": "^5.8.25",
@@ -19,10 +23,13 @@
     "bootstrap": "git://github.com/twbs/bootstrap.git#v4.0.0-alpha",
     "config": "^1.16.0",
     "css-loader": "^0.20.1",
+    "d3": "^3.5.9",
+    "epoch-charting": "^0.8.4",
     "file-loader": "^0.8.4",
     "history": "^1.12.5",
     "image-webpack-loader": "^1.6.1",
     "imagemin": "^3.2.1",
+    "moment": "^2.10.6",
     "node-sass": "^3.3.3",
     "react": "^0.14.3",
     "react-addons-css-transition-group": "^0.14.2",
