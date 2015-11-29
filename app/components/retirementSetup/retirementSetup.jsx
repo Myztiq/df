@@ -52,6 +52,12 @@ export default class extends React.Component {
     })
   };
 
+  closeFundModal = ()=>{
+    this.setState({
+      fundModalOpen: false
+    })
+  };
+
   setFund = (fundName)=> {
     this.setState({
       currentFund: fundName,
@@ -198,6 +204,12 @@ export default class extends React.Component {
           {getFinalSaveButton()}
         </div>
       </div>
+      <FundModal
+        isOpen={this.state.fundModalOpen}
+        close={this.closeFundModal}
+        currentFund={this.state.currentFund}
+        setFund={this.setFund}
+      />
     </div>;
   }
 }
