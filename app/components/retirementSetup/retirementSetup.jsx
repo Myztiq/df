@@ -101,7 +101,7 @@ export default class extends React.Component {
       if (currentSaved) {
         return base;
       }
-      if (!dependenciesSaved) {
+      if (!dependenciesSaved && !this.props.editing) {
         return base + 'disabled';
       }
       return base;

@@ -9,13 +9,15 @@ export default class extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      editingRetirement: false
+      editingRetirement: true,
+      retirementSaved: false
     };
   }
 
   saveRetirementSetup = () => {
     this.setState({
-      editingRetirement: false
+      editingRetirement: false,
+      retirementSaved: true
     });
   };
   editRetirement = () => {
@@ -32,7 +34,7 @@ export default class extends React.Component {
 
           <Switch expression={this.state.editingRetirement}>
             <Case value={true}>
-              <RetirementSetup save={this.saveRetirementSetup} editing={true}/>
+              <RetirementSetup save={this.saveRetirementSetup} editing={this.state.retirementSaved}/>
             </Case>
             <Case value={false}>
               <RetirementStats edit={this.editRetirement}/>
