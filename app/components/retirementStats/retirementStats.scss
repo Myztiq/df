@@ -1,0 +1,38 @@
+#retirementStats{
+  .total-saved{
+    small{
+      font-size: 20px;
+      display: block;
+    }
+    span{
+      font-size: 70px;
+      display: block;
+      color: green;
+    }
+  }
+
+  dl.horizontal{
+    dt{
+      clear: left;
+    }
+    dt, dd {
+      display: inline-block;
+      float: left;
+    }
+    dd{
+      margin-left: 5px;
+    }
+  }
+  .green{
+    color: green;
+  }
+  .red{
+    color: red;
+  }
+  .table-sm{
+    th{
+      font-size: 12px;
+      vertical-align: middle;
+    }
+  }
+}

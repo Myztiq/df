@@ -14,7 +14,8 @@ export default class extends React.Component {
       fundSaved: this.props.editing,
       modalOpen: false,
       currentFund: 'targetDate',
-      hasChanged: false
+      hasChanged: false,
+      fundLevel: 'Target Date Fund'
     };
     this.paycheckTotal = 1000;
     this.companyMatchMax = 200;
@@ -54,6 +55,7 @@ export default class extends React.Component {
 
   closeFundModal = ()=>{
     this.setState({
+      fundLevel: 'Advanced',
       fundModalOpen: false
     })
   };
@@ -188,7 +190,7 @@ export default class extends React.Component {
             <div className="title">Invested in</div>
             <div className={this.state.fundSaved ? '' : 'input-group'}>
               <div className="picker btn btn-secondary form-control" onClick={this.openFundModal}>
-                Target Date Fund
+                {this.state.fundLevel}
               </div>
               {getSaveButton('fundSaved')}
             </div>
