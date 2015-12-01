@@ -39,7 +39,7 @@ export default class extends React.Component {
       <div className="row">
         <div className="col-sm-8">
           <div className="total-saved">
-            <small>Total Balance:</small>
+            <small>Total Balance</small>
             <span>$29,715.88</span>
           </div>
         </div>
