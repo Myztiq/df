@@ -88,7 +88,7 @@ export default class extends React.Component {
     };
     var getFinalSaveButton = ()=> {
       if (this.state.retirementAgeSaved && this.state.paycheckAmountSaved && this.state.fundSaved && this.state.hasChanged) {
-        return <div className="btn btn-primary" onClick={this.props.save}>Save</div>;
+        return <div className="btn btn-success" onClick={this.props.save}>Save</div>;
       }
     };
 

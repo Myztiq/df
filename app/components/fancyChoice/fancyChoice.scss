@@ -1,0 +1,18 @@
+.fancy-choice{
+  width: 100%;
+  margin-bottom: 5px;
+  padding-left: 40px;
+  position: relative;
+  text-align: left;
+  font-size: 20px;
+  .help{
+    font-size: 12px;
+    font-style: italic;
+  }
+  .fa{
+    position: absolute;
+    left: 10px;
+    font-size: 25px;
+    top: 18px;
+  }
+}

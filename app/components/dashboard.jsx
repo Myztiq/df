@@ -4,13 +4,15 @@ import 'components/dashboard.scss'
 import RetirementSetup from 'components/retirementSetup/retirementSetup.jsx'
 import RetirementStats from 'components/retirementStats/retirementStats.jsx'
 import {Switch, Case} from 'components/switch/switch.jsx'
+import PickTypeModal from 'components/nonRetirementSetup/pickTypeModal.jsx'
 
 export default class extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       editingRetirement: true,
-      retirementSaved: false
+      retirementSaved: false,
+      anotherGoalModalOpen: false
     };
   }
 
@@ -25,6 +27,11 @@ export default class extends React.Component {
       editingRetirement: true
     });
   };
+  addAnotherGoal = () => {
+    this.setState({
+      anotherGoalModalOpen: true
+    })
+  }
 
   render() {
     return <div id="retirementDashboard">
@@ -44,12 +51,15 @@ export default class extends React.Component {
       </div>
       <div className="card card-block">
         <div className="card-body">
-          <div className="btn btn-secondary addAnother">
+          <div className="btn btn-secondary addAnother" onClick={this.addAnotherGoal}>
             <i className="fa fa-plus"></i>
             <span>Add another goal</span>
           </div>
         </div>
       </div>
+      <PickTypeModal
+        isOpen={this.state.anotherGoalModalOpen}
+      />
     </div>;
   }
 }
