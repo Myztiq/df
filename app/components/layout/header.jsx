@@ -29,7 +29,7 @@ export default class extends React.Component {
             <a className="dropdown-item" href="#">Account Statements and Documents</a>
           </div>
         </li>
-        <li className="nav-item">
+        <li className="nav-item dropdown">
           <a className="nav-link" data-toggle="dropdown" href="#">
             I need Help
           </a>
