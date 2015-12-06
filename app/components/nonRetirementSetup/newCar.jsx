@@ -25,6 +25,9 @@ export default class extends React.Component {
     var goalSaved = <div/>
     if (this.props.goal.saved) {
       return <div id="newCar">
+        <div className="pull-right">
+          <a href="#">Have questions about saving for the car?</a>
+        </div>
         <h3>New Car</h3>
         <div className="row">
           <div className="col-sm-8">
@@ -32,16 +35,16 @@ export default class extends React.Component {
               <small>Recommended amount saved per paycheck</small>
               <span>$20.00</span>
             </div>
-            <small>You should have $1,000 saved so far</small>
+            <small>You should have $1,000 <a href="#" onClick={this.props.edit}><i className="fa fa-pencil"></i></a> saved so far</small>
           </div>
           <div className="col-sm-4">
             <dl className="horizontal">
               <dt>Money should be in a: </dt>
               <dd>High Yield Bank Account</dd>
               <dt>Target Date: </dt>
-              <dd>December 2017</dd>
+              <dd>December 2017 <a href="#" onClick={this.props.edit}><i className="fa fa-pencil"></i></a></dd>
               <dt>Target Amount: </dt>
-              <dd>$2,000</dd>
+              <dd>$2,000 <a href="#" onClick={this.props.edit}><i className="fa fa-pencil"></i></a></dd>
             </dl>
           </div>
         </div>
@@ -69,7 +72,7 @@ export default class extends React.Component {
 
     return <div>
       <div className="pull-right">
-        <a href="#">Need help figuring out how much you need and when?</a>
+        <a href="#">Have questions about saving for the car?</a>
       </div>
       <h3>New Car</h3>
       <div className="row">

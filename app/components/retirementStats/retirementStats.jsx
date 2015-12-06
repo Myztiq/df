@@ -70,7 +70,7 @@ export default class extends React.Component {
         </div>
         <div className="col-sm-4">
           <div className="">
-            <h4>Investments</h4>
+            <h4>Investments <a href="#" onClick={this.props.edit}><i className="fa fa-pencil"></i></a></h4>
             <table className="table table-hover table-sm">
               <thead className="thead-default">
                 <tr>
@@ -99,7 +99,7 @@ export default class extends React.Component {
         </div>
         <div className="col-sm-4">
           <div className="">
-            <h4>Paycheck Contributions</h4>
+            <h4>Paycheck Contributions <a href="#" onClick={this.props.edit}><i className="fa fa-pencil"></i></a></h4>
             <dl className="horizontal">
               <dt>Contributions: </dt><dd>$300</dd>
               <dt>Match: </dt><dd>$111</dd>

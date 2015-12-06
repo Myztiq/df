@@ -25,13 +25,13 @@ export default class extends React.Component {
           <div className="dropdown-menu">
             <a className="dropdown-item" href="#">Dashboard</a>
             <a className="dropdown-item" href="#">Change Investments</a>
-            <a className="dropdown-item" href="#">Account Performance and History</a>
-            <a className="dropdown-item" href="#">Account Statements and Documents</a>
+            <a className="dropdown-item" href="#">Account Performance & History</a>
+            <a className="dropdown-item" href="#">Account Statements & Documents</a>
           </div>
         </li>
         <li className="nav-item dropdown">
           <a className="nav-link" data-toggle="dropdown" href="#">
-            I need Help
+            I Need Help
           </a>
           <div className="dropdown-menu">
             <a className="dropdown-item" href="#">How do I afford retirement</a>
@@ -45,7 +45,7 @@ export default class extends React.Component {
             Documents & Customer Service
           </a>
           <div className="dropdown-menu">
-            <a className="dropdown-item" href="#">Accounts statements and legal docs</a>
+            <a className="dropdown-item" href="#">Accounts statements & legal docs</a>
             <a className="dropdown-item" href="#">Tax information</a>
             <a className="dropdown-item" href="#">Rollover/consolidate old accounts</a>
             <a className="dropdown-item" href="#">Loans & withdrawals</a>
@@ -61,7 +61,7 @@ export default class extends React.Component {
     return <header id="header">
       <div className="container">
         <nav className="navbar navbar-dark">
-          <a className="navbar-brand" href="/"><img src={logo} /></a>
+          <a className="navbar-br&" href="/"><img src={logo} /></a>
           {navbar}
         </nav>
       </div>
