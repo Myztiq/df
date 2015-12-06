@@ -31,7 +31,7 @@ export default class extends React.Component {
   };
   changePaycheckAmount = (event)=> {
     this.setState({
-      paycheckAmount: parseInt(event.target.value, 10),
+      paycheckAmount: parseInt(event.target.value, 10) || 0,
       paycheckAmountSaved: false
     })
   };
@@ -120,8 +120,15 @@ export default class extends React.Component {
     if (inDanger) {
       paycheckButtonLevel = 'btn-danger';
       paycheckSubText = <div className="sub bg-danger">
-        Having trouble saving for retirement?
-        <a href="foo" target="_blank">How can we help?</a>
+        We know that saving for retirement can be hard.
+        Why'd you decide to lower your contribution?
+        How can we help?
+        <div className="text-left list-group">
+          <a className="list-group-item" href="#">I'm worried about a stock market downturn and losing money</a>
+          <a className="list-group-item" href="#">Investing is confusing and I don’t know enough about it</a>
+          <a className="list-group-item" href="#">I don't make enough money to save for retirement</a>
+          <a className="list-group-item" href="#">I have other reasons</a>
+        </div>
       </div>;
     } else if (belowMatch && belowRecommended) {
       paycheckButtonLevel = 'btn-warning';
