@@ -25,22 +25,33 @@ export default class extends React.Component {
           <div className="dropdown-menu">
             <a className="dropdown-item" href="#">Dashboard</a>
             <a className="dropdown-item" href="#">Change Investments</a>
-            <a className="dropdown-item" href="#">Account Performance and Histroy</a>
-            <a className="dropdown-item" href="#">Account Statements and Document</a>
+            <a className="dropdown-item" href="#">Account Performance and History</a>
+            <a className="dropdown-item" href="#">Account Statements and Documents</a>
           </div>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="#">
-            I Need Help
+          <a className="nav-link" data-toggle="dropdown" href="#">
+            I need Help
           </a>
+          <div className="dropdown-menu">
+            <a className="dropdown-item" href="#">How do I afford retirement</a>
+            <a className="dropdown-item" href="#">I'm worried about the stock market</a>
+            <a className="dropdown-item" href="#">I have questions about finance terms</a>
+            <a className="dropdown-item" href="#">View Full Knowledge Center</a>
+          </div>
         </li>
         <li className="nav-item dropdown">
           <a className="nav-link" data-toggle="dropdown" href="#">
             Documents & Customer Service
           </a>
           <div className="dropdown-menu">
-            <a className="dropdown-item" href="#">Change Account Information</a>
-            <a className="dropdown-item" href="#">Change Beneficiary</a>
+            <a className="dropdown-item" href="#">Accounts statements and legal docs</a>
+            <a className="dropdown-item" href="#">Tax information</a>
+            <a className="dropdown-item" href="#">Rollover/consolidate old accounts</a>
+            <a className="dropdown-item" href="#">Loans & withdrawals</a>
+            <a className="dropdown-item" href="#">How do fees work?</a>
+            <a className="dropdown-item" href="#">Change my contact information</a>
+            <a className="dropdown-item" href="#">Change your beneficiary</a>
             <Link className="dropdown-item" to="/logout">Logout</Link>
           </div>
         </li>
