@@ -46,9 +46,9 @@ export default class extends React.Component {
         <div className="col-sm-4">
           <dl className="horizontal">
             <dt>Performance (today): </dt>
-            <dd className="green">+.43%</dd>
+            <dd className="red">-.43%</dd>
             <dt>Performance MTD: </dt>
-            <dd className="green">+1.1%</dd>
+            <dd className="red">-1.1%</dd>
             <dt>Performance YTD: </dt>
             <dd className="green">+5.47%</dd>
           </dl>

@@ -200,6 +200,7 @@ export default class extends React.Component {
           </div>
         </div>
       </div>
+
       <div className="text-right">
         <div className="btn-group">
           {getCancelButton()}

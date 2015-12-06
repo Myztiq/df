@@ -5,6 +5,7 @@ import RetirementSetup from 'components/retirementSetup/retirementSetup.jsx'
 import RetirementStats from 'components/retirementStats/retirementStats.jsx'
 import {Switch, Case} from 'components/switch/switch.jsx'
 import PickTypeModal from 'components/nonRetirementSetup/pickTypeModal.jsx'
+import NewCarGoal from 'components/nonRetirementSetup/newCar.jsx'
 
 export default class extends React.Component {
   constructor(props) {
@@ -12,7 +13,8 @@ export default class extends React.Component {
     this.state = {
       editingRetirement: true,
       retirementSaved: false,
-      anotherGoalModalOpen: false
+      anotherGoalModalOpen: false,
+      otherGoals: []
     };
   }
 
@@ -32,13 +34,42 @@ export default class extends React.Component {
       anotherGoalModalOpen: true
     })
   }
+  picked = (type) => {
+    var otherGoals = this.state.otherGoals
+    otherGoals.push({ type: type })
+    this.setState({
+      otherGoals: otherGoals,
+      anotherGoalModalOpen: false
+    })
+  }
+
+  goalRenderers = {
+    'newCar': NewCarGoal
+  }
+
+  prepUpdateGoal = (index)=> {
+    return (newGoal) => {
+      var goals = this.state.otherGoals
+      goals[index] = newGoal
+      this.setState({
+        otherGoals: goals
+      })
+    }
+  }
 
   render() {
+    var renderOtherGoals = ()=> {
+      return this.state.otherGoals.map((goal, index)=> {
+        var ComponentName = this.goalRenderers[goal.type]
+        return <div className="card card-block" key={index}>
+          <ComponentName goal={goal} updateGoal={this.prepUpdateGoal(index)}/>
+        </div>
+      })
+    }
     return <div id="retirementDashboard">
       <div className="card card-block">
         <h3>Retirement</h3>
         <div className="card-body">
-
           <Switch expression={this.state.editingRetirement}>
             <Case value={true}>
               <RetirementSetup save={this.saveRetirementSetup} editing={this.state.retirementSaved}/>
@@ -49,6 +80,7 @@ export default class extends React.Component {
           </Switch>
         </div>
       </div>
+      {renderOtherGoals()}
       <div className="card card-block">
         <div className="card-body">
           <div className="btn btn-secondary addAnother" onClick={this.addAnotherGoal}>
@@ -58,6 +90,7 @@ export default class extends React.Component {
         </div>
       </div>
       <PickTypeModal
+        onPicked={this.picked}
         isOpen={this.state.anotherGoalModalOpen}
       />
     </div>;

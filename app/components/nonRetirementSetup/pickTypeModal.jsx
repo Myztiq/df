@@ -4,11 +4,17 @@ import FancyChoice from 'components/fancyChoice/fancyChoice.jsx'
 
 export default class extends React.Component {
 
+  prepareOnPicked = (type)=> {
+    return ()=>{
+      this.props.onPicked(type)
+    }
+  }
+
   render() {
     return <Modal id="fundModal" show={this.props.isOpen}>
       <Modal.Header closeButton>
         <Modal.Title>
-          What are you trying to save for?
+          What do you need to save for?
         </Modal.Title>
         <Modal.Body>
           <FancyChoice
@@ -18,7 +24,8 @@ export default class extends React.Component {
           />
           <FancyChoice
             selected={false}
-            title="Buying a new car"
+            onPicked={this.prepareOnPicked('newCar')}
+            title="New car"
             help="We help you save so you can enjoy that new car smell."
           />
           <FancyChoice
@@ -34,7 +41,7 @@ export default class extends React.Component {
           <FancyChoice
             selected={false}
             title="Baby"
-            help="We’ll help you plan so you can focus on what color to pain the room."
+            help="We’ll help you plan so you can focus on what color to paint the room."
           />
           <FancyChoice
             selected={false}
