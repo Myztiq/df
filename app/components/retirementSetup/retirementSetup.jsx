@@ -116,6 +116,11 @@ export default class extends React.Component {
       return base;
     };
 
+    var getExclamation = (inDanger) => {
+      if (inDanger && this.state.paycheckAmountSaved) {
+        return <span className="input-group-addon bg-danger"><i className="fa fa-exclamation-triangle"></i></span>
+      }
+    }
 
     var paycheckButtonLevel = 'btn-success';
     var paycheckSubText = '';
@@ -197,6 +202,7 @@ export default class extends React.Component {
               <span className="input-group-addon">$</span>
               <input type="number" className="form-control" value={this.state.paycheckAmount} onChange={this.changePaycheckAmount} min="0" max={this.paycheckTotal}/>
               {getSaveButton('paycheckAmountSaved', paycheckButtonLevel)}
+              {getExclamation(inDanger)}
             </div>
             <div className="padded">
               {paycheckSubText}
