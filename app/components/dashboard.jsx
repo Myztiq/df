@@ -72,7 +72,7 @@ export default class extends React.Component {
         <div className="card-body">
           <Switch expression={this.state.editingRetirement}>
             <Case value={true}>
-              <RetirementSetup save={this.saveRetirementSetup} editing={this.state.retirementSaved}/>
+              <RetirementSetup save={this.saveRetirementSetup} editing={this.state.retirementSaved} addAnotherGoal={this.addAnotherGoal}/>
             </Case>
             <Case value={false}>
               <RetirementStats edit={this.editRetirement}/>

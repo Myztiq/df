@@ -67,6 +67,13 @@ export default class extends React.Component {
     });
   };
 
+  getHelp = ()=>{
+    this.setState({
+      paycheckAmountSaved: true
+    });
+    this.props.addAnotherGoal();
+  }
+
   render() {
     var getSaveButton = (target, level)=> {
       level = level || 'btn-success';
@@ -127,7 +134,7 @@ export default class extends React.Component {
           <a className="list-group-item" href="#">I'm worried about a stock market downturn and losing money</a>
           <a className="list-group-item" href="#">Investing is confusing and I don’t know enough about it</a>
           <a className="list-group-item" href="#">I don't make enough money to save for retirement</a>
-          <a className="list-group-item" href="#">I have other financial goals like a new car</a>
+          <a className="list-group-item" href="#" onClick={this.getHelp}>I have other financial goals like a new car</a>
         </div>
       </div>;
     } else if (belowMatch && belowRecommended) {
