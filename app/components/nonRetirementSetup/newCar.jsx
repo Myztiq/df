@@ -57,6 +57,9 @@ export default class extends React.Component {
     }
 
     return <div>
+      <div className="pull-right">
+        <a href="#">Need help figuring out how much you need and when?</a>
+      </div>
       <h3>New Car</h3>
       <div className="row">
         <div className="col-xs-4">
