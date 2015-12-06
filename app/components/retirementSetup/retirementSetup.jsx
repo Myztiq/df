@@ -127,7 +127,7 @@ export default class extends React.Component {
           <a className="list-group-item" href="#">I'm worried about a stock market downturn and losing money</a>
           <a className="list-group-item" href="#">Investing is confusing and I don’t know enough about it</a>
           <a className="list-group-item" href="#">I don't make enough money to save for retirement</a>
-          <a className="list-group-item" href="#">I have other reasons</a>
+          <a className="list-group-item" href="#">I have other financial goals like a new car</a>
         </div>
       </div>;
     } else if (belowMatch && belowRecommended) {
@@ -165,6 +165,10 @@ export default class extends React.Component {
           Good job! You are saving {this.getPaycheckPercentage()}% of your paycheck every 2 weeks.
         </div>;
       }
+    }
+
+    if (this.state.paycheckAmountSaved || !this.state.retirementAgeSaved) {
+      paycheckSubText = null
     }
 
     return <div>

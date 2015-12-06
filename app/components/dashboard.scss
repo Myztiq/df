@@ -28,8 +28,19 @@
   }
   .padded{
     margin-top: 8px;
+    z-index: 10;
+    position: relative;
+    height: 0px;
+    overflow: visible;
     .sub{
-      padding: 5px;
+      padding: 8px;
+      &.bg-warning, &.bg-danger, &.bg-success {
+        box-shadow: 2px 2px 8px 0px rgba(0,0,0,.4);
+      }
+      &.bg-danger{
+        margin-left: -75px;
+        margin-right: -75px;
+      }
     }
   }
   .addAnother{
