@@ -56,6 +56,17 @@ export default class extends React.Component {
       </div>;
     }
 
+    var getSaveButton = (index) =>{
+      if (this.state.subSaveCount > index) {
+        return
+      }
+      return <div className="input-group-btn">
+        <div className='btn btn-success' onClick={this.subSave}>
+          <i className="fa fa-check"></i>
+        </div>
+      </div>
+    }
+
     return <div>
       <div className="pull-right">
         <a href="#">Need help figuring out how much you need and when?</a>
@@ -65,13 +76,9 @@ export default class extends React.Component {
         <div className="col-xs-4">
           <div className={'sub-card ' + (this.state.subSaveCount > 0 ? 'saved' : '')}>
             <div className="title">I plan on buying the car on</div>
-            <div className='input-group'>
+            <div className={this.state.subSaveCount > 0 ? '' : 'input-group'}>
               <input type="date" className="form-control" style={{height: '38px'}}/>
-              <div className="input-group-btn">
-                <div className='btn btn-success' onClick={this.subSave}>
-                  <i className="fa fa-check"></i>
-                </div>
-              </div>
+              {getSaveButton(0)}
             </div>
             <div className="sub">When do you need the money by?</div>
           </div>
@@ -82,11 +89,7 @@ export default class extends React.Component {
             <div className='input-group'>
               <span className="input-group-addon">$</span>
               <input type="number" className="form-control" defaultValue={0}/>
-              <div className="input-group-btn">
-                <div className='btn btn-success' onClick={this.subSave}>
-                  <i className="fa fa-check"></i>
-                </div>
-              </div>
+              {getSaveButton(1)}
             </div>
             <div className="sub">The average downpayment on a car is $4,000</div>
           </div>
@@ -97,11 +100,7 @@ export default class extends React.Component {
             <div className='input-group'>
               <span className="input-group-addon">$</span>
               <input type="number" className="form-control" defaultValue={0}/>
-              <div className="input-group-btn">
-                <div className='btn btn-success' onClick={this.subSave}>
-                  <i className="fa fa-check"></i>
-                </div>
-              </div>
+              {getSaveButton(2)}
             </div>
             <div className="sub">How much have you saved so far?</div>
           </div>
