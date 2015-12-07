@@ -37,7 +37,7 @@ export default class extends React.Component {
             <a className="dropdown-item" href="#">How do I afford retirement</a>
             <a className="dropdown-item" href="#">I'm worried about the stock market</a>
             <a className="dropdown-item" href="#">I have questions about finance terms</a>
-            <a className="dropdown-item" href="#">View Full Knowledge Center</a>
+            <a className="dropdown-item" href="http://www.dreamforwardfinancial.com/Employee%20Knowledge%20Center.html" target="_blank">Knowledge Center</a>
           </div>
         </li>
         <li className="nav-item dropdown">
