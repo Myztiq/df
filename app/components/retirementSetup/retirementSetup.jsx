@@ -55,7 +55,7 @@ export default class extends React.Component {
 
   closeFundModal = ()=>{
     this.setState({
-      fundLevel: 'Advanced',
+      fundLevel: 'Custom mix of funds',
       fundModalOpen: false
     })
   };
@@ -211,7 +211,7 @@ export default class extends React.Component {
         </div>
         <div className="col-xs-4">
           <div className={getCardClassName(this.state.fundSaved, this.state.paycheckAmountSaved && this.state.retirementAgeSaved)}>
-            <div className="title">Invested in</div>
+            <div className="title">I want to invest in</div>
             <div className={this.state.fundSaved ? '' : 'input-group'}>
               <div className="picker btn btn-secondary form-control" onClick={this.openFundModal}>
                 {this.state.fundLevel}

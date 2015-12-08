@@ -33,7 +33,7 @@ export default class extends React.Component {
       <FancyChoice
         onPicked={this.selectAdvancedFund}
         selected={'advanced' === this.props.currentFund}
-        title="Advanced Mode"
+        title="Advanced"
         help="I know what I'm doing, I want to pick my own mix of funds."
       />
     </div>;
