@@ -15,7 +15,7 @@ export default class extends React.Component {
       modalOpen: false,
       currentFund: 'targetDate',
       hasChanged: false,
-      fundLevel: 'Target Date Fund'
+      fundLevel: 'Choose an option'
     };
     this.paycheckTotal = 1000;
     this.companyMatchMax = 60;
