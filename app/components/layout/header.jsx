@@ -34,9 +34,11 @@ export default class extends React.Component {
             I Need Help
           </a>
           <div className="dropdown-menu">
-            <a className="dropdown-item" href="#">How do I afford retirement</a>
+            <a className="dropdown-item" href="#">How do I afford retirement?</a>
             <a className="dropdown-item" href="#">I'm worried about the stock market</a>
             <a className="dropdown-item" href="#">I have questions about finance terms</a>
+            <a className="dropdown-item" href="#">I need help with non-retirement goals</a>
+            <a className="dropdown-item" href="#">401(k)? IRA? Explain the different account types</a>
             <a className="dropdown-item" href="http://www.dreamforwardfinancial.com/Employee%20Knowledge%20Center.html" target="_blank">Knowledge Center</a>
           </div>
         </li>

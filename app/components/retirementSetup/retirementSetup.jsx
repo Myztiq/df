@@ -9,7 +9,7 @@ export default class extends React.Component {
     this.state = {
       retirementAge: 67,
       retirementAgeSaved: this.props.editing,
-      paycheckAmount: 300,
+      paycheckAmount: 100,
       paycheckAmountSaved: this.props.editing,
       fundSaved: this.props.editing,
       modalOpen: false,
@@ -18,9 +18,9 @@ export default class extends React.Component {
       fundLevel: 'Target Date Fund'
     };
     this.paycheckTotal = 1000;
-    this.companyMatchMax = 200;
-    this.dangerZone = 50;
-    this.recommended = 500;
+    this.companyMatchMax = 60;
+    this.dangerZone = 59;
+    this.recommended = 80 + 60;
   }
 
   changeRetirementAge = (event)=> {
