@@ -71,7 +71,7 @@ export default class extends React.Component {
         <div className="pull-right">
           <a href="#">Have questions about retirement?</a>
         </div>
-        <h3>401(k) Account Setup</h3>
+        <h3>{this.state.retirementSaved ? 'Retirement' : '401(k) Account Setup'}</h3>
         <div className="card-body">
           <Switch expression={this.state.editingRetirement}>
             <Case value={true}>
