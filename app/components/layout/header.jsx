@@ -27,6 +27,7 @@ export default class extends React.Component {
             <a className="dropdown-item" href="#">Change Investments</a>
             <a className="dropdown-item" href="#">Account Performance & History</a>
             <a className="dropdown-item" href="#">Account Statements & Documents</a>
+            <a className="dropdown-item" href="#">Change Paycheck Contribution</a>
           </div>
         </li>
         <li className="nav-item dropdown">

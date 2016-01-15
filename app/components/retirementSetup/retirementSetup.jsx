@@ -123,7 +123,7 @@ export default class extends React.Component {
     }
 
     var paycheckButtonLevel = 'btn-success';
-    var paycheckSubText = '';
+    var paycheckSubText = 'We recommend you save at least $80';
     // Calculate possible states
     var inDanger = this.state.paycheckAmount <= this.dangerZone;
     var belowRecommended = this.getTotalWithCompanyMatch(this.state.paycheckAmount) < this.recommended;
@@ -179,15 +179,19 @@ export default class extends React.Component {
       }
     }
 
+    var paycheckHelp = ''
     if (this.state.paycheckAmountSaved || !this.state.retirementAgeSaved) {
-      paycheckSubText = null
+      paycheckSubText = ''
+      paycheckHelp = <div className="sub">
+        We recommend you save at least $80
+      </div>
     }
 
     return <div>
       <div className="row">
         <div className="col-xs-4">
           <div className="sub-card">
-            <div className="title">I plan to retire when I'm</div>
+            <div className="title">I plan to retire when I'm:</div>
             <div className={this.state.retirementAgeSaved ? '' : 'input-group'}>
               <input type="number" className="form-control" value={this.state.retirementAge} onChange={this.changeRetirementAge}/>
               {getSaveButton('retirementAgeSaved')}
@@ -197,13 +201,14 @@ export default class extends React.Component {
         </div>
         <div className="col-xs-4">
           <div className={getCardClassName(this.state.paycheckAmountSaved, this.state.retirementAgeSaved)}>
-            <div className="title">Each paycheck I save</div>
+            <div className="title">Each paycheck I save:</div>
             <div className='input-group'>
               <span className="input-group-addon">$</span>
               <input type="number" className="form-control" value={this.state.paycheckAmount} onChange={this.changePaycheckAmount} min="0" max={this.paycheckTotal}/>
               {getSaveButton('paycheckAmountSaved', paycheckButtonLevel)}
               {getExclamation(inDanger)}
             </div>
+            {paycheckHelp}
             <div className="padded">
               {paycheckSubText}
             </div>
@@ -211,7 +216,7 @@ export default class extends React.Component {
         </div>
         <div className="col-xs-4">
           <div className={getCardClassName(this.state.fundSaved, this.state.paycheckAmountSaved && this.state.retirementAgeSaved)}>
-            <div className="title">I want to invest in</div>
+            <div className="title">I want to invest in:</div>
             <div className={this.state.fundSaved ? '' : 'input-group'}>
               <div className="picker btn btn-secondary form-control" onClick={this.openFundModal}>
                 {this.state.fundLevel}

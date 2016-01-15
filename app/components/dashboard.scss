@@ -68,5 +68,10 @@
   .bg-danger .list-group {
     margin: 8px;
     opacity: .95;
+    font-style: normal;
+  }
+  .bg-danger span{
+    font-size: 17px;
+    font-style: normal;
   }
 }

@@ -71,7 +71,7 @@ export default class extends React.Component {
         <div className="pull-right">
           <a href="#">Have questions about retirement?</a>
         </div>
-        <h3>Retirement</h3>
+        <h3>401(k) Account Setup</h3>
         <div className="card-body">
           <Switch expression={this.state.editingRetirement}>
             <Case value={true}>
@@ -88,7 +88,7 @@ export default class extends React.Component {
         <div className="card-body">
           <div className="btn btn-secondary addAnother" onClick={this.addAnotherGoal}>
             <i className="fa fa-plus"></i>
-            <span>Add another goal</span>
+            <span>Stressed about other financial goals?</span>
           </div>
         </div>
       </div>
