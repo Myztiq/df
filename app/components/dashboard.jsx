@@ -5,6 +5,7 @@ import RetirementSetup from 'components/retirementSetup/retirementSetup.jsx'
 import RetirementStats from 'components/retirementStats/retirementStats.jsx'
 import {Switch, Case} from 'components/switch/switch.jsx'
 import PickTypeModal from 'components/nonRetirementSetup/pickTypeModal.jsx'
+import VerifyCarModal from 'components/nonRetirementSetup/verifyCarModal.jsx'
 import NewCarGoal from 'components/nonRetirementSetup/newCar.jsx'
 
 export default class extends React.Component {
@@ -33,29 +34,37 @@ export default class extends React.Component {
     this.setState({
       anotherGoalModalOpen: true
     })
-  }
+  };
   picked = (type) => {
-    var otherGoals = this.state.otherGoals
-    otherGoals.push({ type: type })
+    if (type === 'newCar' && !this.state.verifyCarGoalOpen) {
+      this.setState({
+        verifyCarGoalOpen: true,
+        anotherGoalModalOpen: false
+      });
+      return;
+    }
+    var otherGoals = this.state.otherGoals;
+    otherGoals.push({ type: type });
     this.setState({
       otherGoals: otherGoals,
-      anotherGoalModalOpen: false
+      anotherGoalModalOpen: false,
+      verifyCarGoalOpen: false
     })
-  }
+  };
 
   goalRenderers = {
     'newCar': NewCarGoal
-  }
+  };
 
   prepUpdateGoal = (index)=> {
     return (newGoal) => {
-      var goals = this.state.otherGoals
-      goals[index] = newGoal
+      var goals = this.state.otherGoals;
+      goals[index] = newGoal;
       this.setState({
         otherGoals: goals
       })
     }
-  }
+  };
 
   render() {
     var renderOtherGoals = ()=> {
@@ -95,6 +104,10 @@ export default class extends React.Component {
       <PickTypeModal
         onPicked={this.picked}
         isOpen={this.state.anotherGoalModalOpen}
+      />
+      <VerifyCarModal
+        onPicked={this.picked}
+        isOpen={this.state.verifyCarGoalOpen}
       />
     </div>;
   }
